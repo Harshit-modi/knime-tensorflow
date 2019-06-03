@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE knimeNode PUBLIC "-//UNIKN//DTD KNIME Node 2.0//EN" "http://www.inf.uni-konstanz.de/bioml/research/knime/Node.dtd">
+<knimeNode icon="./default.png" type="Manipulator">
+	<name>NumericBinner</name>
+	
+	<shortDescription>
+	    Simple numeric binner with equidistant bins.
+	</shortDescription>
+	
+	<fullDescription>
+		<intro>Simple numeric binner with equidistant bins.</intro>
+		<option name="Number of bins">Define the number of bins</option>
+		<option name="Column to bin">Select the numeric column which should be binned</option>
+	</fullDescription>
+	
+	<ports>
+		<inPort index="0" name="Data to bin">Data to bin</inPort>
+		<outPort index="0" name="Binned data">The input data with an additional 
+		column containing the referring bin number for each row.</outPort>
+	</ports>	
+	<views>
+		<view index="0" name="Histogram">Displays the relative size of each bin in a histogram</view>
+	</views>
+</knimeNode>
