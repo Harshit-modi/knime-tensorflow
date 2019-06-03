@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?>
-<plugin>
+<?eclipse version="3.0"?><plugin>
    <extension-point id="TFNetworkConverter" name="TFNetworkConverter" schema="schema/TFNetworkConverter.exsd"/>
    <extension
          point="org.knime.core.PortType">
@@ -14,91 +13,55 @@
             specSerializer="org.knime.dl.tensorflow.base.portobjects.TFNetworkPortObjectSpec$Serializer">
       </portType>
    </extension>
-   <extension
-         point="org.knime.workbench.repository.categories">
-      <category
-            icon="icons/tensorflow.png"
-            level-id="tensorflow"
-            locked="true"
-            name="TensorFlow"
-            path="/labs/deeplearning">
+   <extension point="org.knime.workbench.repository.categories">
+      <category icon="icons/tensorflow.png" level-id="tensorflow" locked="true" name="TensorFlow" path="/labs/deeplearning">
       </category>
    </extension>
-   <extension
-         point="org.knime.workbench.repository.nodes">
-      <node
-            category-path="/labs/deeplearning/tensorflow"
-            deprecated="false"
-            factory-class="org.knime.dl.tensorflow.base.nodes.reader.TFReaderNodeFactory">
+   <extension point="org.knime.workbench.repository.nodes">
+      <node category-path="/labs/deeplearning/tensorflow" deprecated="false" factory-class="org.knime.dl.tensorflow.base.nodes.reader.TFReaderNodeFactory">
       </node>
-      <node
-            category-path="/labs/deeplearning/tensorflow"
-            deprecated="false"
-            factory-class="org.knime.dl.tensorflow.base.nodes.export.TFExporterNodeFactory">
+      <node category-path="/labs/deeplearning/tensorflow" deprecated="false" factory-class="org.knime.dl.tensorflow.base.nodes.export.TFExporterNodeFactory">
       </node>
-      <node
-            category-path="/labs/deeplearning/tensorflow"
-            deprecated="false"
-            factory-class="org.knime.dl.tensorflow.base.nodes.executor.TFExecutorNodeFactory">
-      </node>
-  </extension>
-   <extension
-         point="org.knime.dl.DLExecutionContext">
-      <DLExecutionContext
-            DLExecutionContext="org.knime.dl.tensorflow.savedmodel.core.execution.TFSavedModelExecutionContext">
+<node
+    category-path="/labs/deeplearning/tensorflow"
+    deprecated="false"
+    factory-class="org.knime.dl.tensorflow.base.nodes.executor.TFExecutorNodeFactory">
+  </node>
+  <node category-path="/" factory-class="org.knime.dl.MyTfNodeFactory" id="org.knime.dl.MyTfNodeFactory"/>
+<node category-path="/" factory-class="org.knime.example.NumericBinnerNodeFactory" id="org.knime.example.NumericBinnerNodeFactory"/>
+</extension>
+   <extension point="org.knime.dl.DLExecutionContext">
+      <DLExecutionContext DLExecutionContext="org.knime.dl.tensorflow.savedmodel.core.execution.TFSavedModelExecutionContext">
       </DLExecutionContext>
-      <DLExecutionContext
-            DLExecutionContext="org.knime.dl.tensorflow.savedmodel.core.execution.TFPythonSavedModelExecutionContext">
+      <DLExecutionContext DLExecutionContext="org.knime.dl.tensorflow.savedmodel.core.execution.TFPythonSavedModelExecutionContext">
       </DLExecutionContext>
    </extension>
-   <extension
-         point="org.knime.dl.DLTensorToDataCellConverterFactory">
-      <DLTensorToDataCellConverterFactory
-            DLTensorToDataCellConverterFactory="org.knime.dl.tensorflow.savedmodel.core.data.convert.DLStringTensorToStringCellConverterFactory"
-            deprecated="true">
+   <extension point="org.knime.dl.DLTensorToDataCellConverterFactory">
+      <DLTensorToDataCellConverterFactory DLTensorToDataCellConverterFactory="org.knime.dl.tensorflow.savedmodel.core.data.convert.DLStringTensorToStringCellConverterFactory" deprecated="true">
       </DLTensorToDataCellConverterFactory>
    </extension>
-   <extension
-         point="org.knime.dl.DLDataValueToTensorConverterFactory">
-      <DLDataValueToTensorConverterFactory
-            DLDataValueToTensorConverterFactory="org.knime.dl.tensorflow.savedmodel.core.data.convert.DLStringValueToStringTensorConverterFactory"
-            deprecated="true">
+   <extension point="org.knime.dl.DLDataValueToTensorConverterFactory">
+      <DLDataValueToTensorConverterFactory DLDataValueToTensorConverterFactory="org.knime.dl.tensorflow.savedmodel.core.data.convert.DLStringValueToStringTensorConverterFactory" deprecated="true">
       </DLDataValueToTensorConverterFactory>
    </extension>
-   <extension
-         point="org.knime.dl.tensorflow.TFNetworkConverter">
-      <TFNetworkConverter
-            TFNetworkConverter="org.knime.dl.tensorflow.core.convert.keras.TFKerasNetworkConverter">
+   <extension point="org.knime.dl.tensorflow.TFNetworkConverter">
+      <TFNetworkConverter TFNetworkConverter="org.knime.dl.tensorflow.core.convert.keras.TFKerasNetworkConverter">
       </TFNetworkConverter>
    </extension>
-   <extension
-         point="org.knime.workbench.repository.nodesets">
-      <nodeset
-         factory-class="org.knime.dl.tensorflow.base.nodes.converter.keras.TFConverterNodeSetFactory">
+   <extension point="org.knime.workbench.repository.nodesets">
+      <nodeset factory-class="org.knime.dl.tensorflow.base.nodes.converter.keras.TFConverterNodeSetFactory">
       </nodeset>
    </extension>
-   <extension
-         point="org.knime.dl.python.DLPythonNetworkLoader">
-      <DLPythonNetworkLoader
-            DLPythonNetworkLoader="org.knime.dl.tensorflow.savedmodel.core.TFPythonNetworkLoader">
+   <extension point="org.knime.dl.python.DLPythonNetworkLoader">
+      <DLPythonNetworkLoader DLPythonNetworkLoader="org.knime.dl.tensorflow.savedmodel.core.TFPythonNetworkLoader">
       </DLPythonNetworkLoader>
    </extension>
-   <extension
-         point="org.knime.python.modules">
-      <directory
-            path="py/">
+   <extension point="org.knime.python.modules">
+      <directory path="py/">
       </directory>
    </extension>
-   <extension
-         point="org.knime.dl.DLNetworkExporter">
-      <DLNetworkExporter
-            DLNetworkExporter="org.knime.dl.tensorflow.savedmodel.core.export.TFSavedModelNetworkExporter">
+   <extension point="org.knime.dl.DLNetworkExporter">
+      <DLNetworkExporter DLNetworkExporter="org.knime.dl.tensorflow.savedmodel.core.export.TFSavedModelNetworkExporter">
       </DLNetworkExporter>
-   </extension>
-   <extension
-         point="org.knime.dl.python.DLPythonModuleDependency">
-      <DLPythonModuleDependency
-            DLPythonModuleDependency="org.knime.dl.tensorflow.core.TFPythonModuleDependency">
-      </DLPythonModuleDependency>
    </extension>
 </plugin>
